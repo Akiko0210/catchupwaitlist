@@ -52,8 +52,8 @@ export default function Home() {
         Join the waitlist for CatchUp
       </div>
       <div className="w-[600px] text-center mb-20 mt-8 text-[#A3B9C9]">
-        Don't miss your chance to be one of the first to try CatchUp. Sign up
-        now to secure your spot and receive exclusive early access when we
+        Don&apos;t miss your chance to be one of the first to try CatchUp. Sign
+        up now to secure your spot and receive exclusive early access when we
         launch.
       </div>
       <div className="w-[400px]">
