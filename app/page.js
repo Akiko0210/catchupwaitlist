@@ -9,13 +9,13 @@ const Input = ({ icon, placeholder, setState, state }) => {
   const [focus, setFocus] = useState(false);
   return (
     <div
-      className={`rounded-md bg-[#14141A] px-4 py-2 mb-4 ${
+      className={`flex items-center rounded-md bg-[#14141A] py-2 mb-4 ${
         focus || state != "" ? "opacity-100" : "opacity-50"
       }`}
     >
-      <FontAwesomeIcon icon={icon} className="text-grey h-4 mr-2" />
+      <FontAwesomeIcon icon={icon} className="text-grey h-4 ml-4 mr-2 " />
       <input
-        className="border-none focus:outline-none bg-[#14141A]"
+        className="border-none focus:outline-none bg-[#14141A] w-full"
         value={state}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
@@ -48,10 +48,13 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-24 text-white">
-      <div className="text-6xl mt-32 font-light" style={styles.gradientText}>
+      <div
+        className="text-4xl lg:text-6xl mt-32 font-light text-center"
+        style={styles.gradientText}
+      >
         Join the waitlist for CatchUp
       </div>
-      <div className="w-[600px] text-center mb-20 mt-8 text-[#A3B9C9]">
+      <div className="w-[400px] lg:w-[600px] text-center mb-20 mt-8 text-[#A3B9C9]">
         Don&apos;t miss your chance to be one of the first to try CatchUp. Sign
         up now to secure your spot and receive exclusive early access when we
         launch.
