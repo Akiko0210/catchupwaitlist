@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen max-h-screen flex-col items-center text-white">
+    <main className="flex h-screen overflow-y-hidden flex-col items-center text-white">
       <div
         className="text-4xl md:text-5xl lg:text-6xl mt-32 font-light text-center"
         style={styles.gradientText}
