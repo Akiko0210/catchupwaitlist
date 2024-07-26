@@ -47,19 +47,19 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 text-white">
+    <main className="flex min-h-screen max-h-screen flex-col items-center text-white">
       <div
-        className="text-4xl lg:text-6xl mt-32 font-light text-center"
+        className="text-4xl md:text-5xl lg:text-6xl mt-32 font-light text-center"
         style={styles.gradientText}
       >
         Join the waitlist for CatchUp
       </div>
-      <div className="w-[400px] lg:w-[600px] text-center mb-20 mt-8 text-[#A3B9C9]">
+      <div className="w-screen px-8 sm:px-0 sm:w-[400px] text-sm sm:text-base md:w-[600px] text-center mb-20 mt-8 text-[#A3B9C9]">
         Don&apos;t miss your chance to be one of the first to try CatchUp. Sign
         up now to secure your spot and receive exclusive early access when we
         launch.
       </div>
-      <div className="w-[400px]">
+      <div className="w-screen px-8 sm:px-0 sm:w-[400px]">
         <form onSubmit={handleSubmit}>
           <Input
             icon={faUser}
