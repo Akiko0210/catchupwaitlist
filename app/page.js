@@ -30,6 +30,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,8 +40,15 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateEmail(email) && name) {
-      addUser({ email, name });
-      setMessage(`Thank you for signing up, ${name}!`);
+      setLoader(true);
+      const message = await addUser({ email, name });
+      if (message == "Success") {
+        setMessage(`Thank you for signing up, ${name}!`);
+        setName("");
+        setEmail("");
+      } else setMessage(`You're already on our waitlist!`);
+
+      setLoader(false);
     } else {
       setMessage("Please enter a valid email address.");
     }
@@ -74,6 +82,7 @@ export default function Home() {
             placeholder={"Email..."}
           />
           <button
+            disabled={loader}
             className="text-white rounded-md text-center w-full mt-2 border-white border-[1px] p-2 opacity-75 hover:opacity-100"
             type="submit"
           >
